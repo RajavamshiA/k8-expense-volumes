@@ -77,7 +77,7 @@ spec:
       namespace: expense
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "ebs-sc2"
+      storageClassName: "ebs-sc"
       resources:
         requests:
           storage: 1Gi
