@@ -33,7 +33,7 @@ metadata:
     tier: db
 spec: 
   selector:
-    app: mysql
+    app: mysql    
     project: expense
     tier: db
   ports: 
