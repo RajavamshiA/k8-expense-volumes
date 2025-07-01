@@ -8,7 +8,7 @@ data:
   nginx.conf: |
     user nginx;   
     worker_processes auto;    
-    error_log /var/log/nginx/error.log;
+    error_log /var/log/nginx/error.log;     
     pid /run/nginx.pid;
 
     # Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.      
@@ -118,7 +118,7 @@ spec:
 ---
 #Node Port as we are exposing it to the users 
 kind: Service
-apiVersion: v1
+apiVersion: v1      
 metadata: 
   name: frontend
   namespace: expense
