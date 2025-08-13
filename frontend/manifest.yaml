@@ -1,4 +1,5 @@
 
+# Changed port number from 80 to 8080 as k8 is highly secure and doesn't allow us to open the system ports.
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -40,7 +41,7 @@ data:
         include /etc/nginx/conf.d/*.conf;
 
         server {
-            listen       8080 default_server;
+            listen       8080 default_server; 
             listen       [::]:8080 default_server;
             server_name  _;
             root         /usr/share/nginx/html;
