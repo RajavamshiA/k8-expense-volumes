@@ -1,4 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: expense
+  name: expense ## Creating a namespace expense for demonstrating k8-volumes concept.
