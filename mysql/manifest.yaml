@@ -3,16 +3,16 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql-headless
-  namespace: expense-app
+  namespace: expense
   labels:
     app: mysql
-    project: expense-app
+    project: expense
     tier: db
 spec: 
   clusterIP: None
   selector:
     app: mysql
-    project: expense-app
+    project: expense
     tier: db
   ports: 
   - protocol: TCP
@@ -26,15 +26,15 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql
-  namespace: expense-app
+  namespace: expense
   labels:
     app: mysql
-    project: expense-app
+    project: expense
     tier: db
 spec: 
   selector:
     app: mysql    
-    project: expense-app
+    project: expense
     tier: db
   ports: 
   - protocol: TCP
@@ -46,12 +46,12 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mysql
-  namespace: expense-app
+  namespace: expense
 spec:
   selector:
     matchLabels:
       app: mysql
-      project: expense-app
+      project: expense
       tier: db # has to match .spec.template.metadata.labels
   serviceName: "mysql-headless"
   replicas: 2 # by default is 1
@@ -60,7 +60,7 @@ spec:
     metadata:
       labels:
         app: mysql
-        project: expense-app
+        project: expense
         tier: db # has to match .spec.selector.matchLabels
     spec:
       terminationGracePeriodSeconds: 10
@@ -74,7 +74,7 @@ spec:
   volumeClaimTemplates:
   - metadata:
       name: mysql
-      namespace: expense-app
+      namespace: expense
     spec:
       accessModes: [ "ReadWriteOnce" ]
       storageClassName: "ebs-sc"
