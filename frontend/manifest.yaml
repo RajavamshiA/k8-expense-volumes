@@ -113,7 +113,7 @@ spec:
         - containerPort: 8080 
         volumeMounts:
         - name: nginx
-          mountPath: /etc/nginx/nginx.conf
+          mountPath: /etc/nginx/nginx.conf # considering the configuration as disk and mounting it to the nginx.conf
           subPath: nginx.conf
           readOnly: true    
 ---
